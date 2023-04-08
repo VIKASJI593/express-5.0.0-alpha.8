@@ -332,6 +332,7 @@ app.listen(port, () => {
 */
 
 /*-------COMBINATION OF INDEPENDENT FUNCTION AND ARRAY OF FUNCTION----------- */
+/*
 import express from "express";
 const app = express();
 const port = process.env.PORT || "8000";
@@ -367,6 +368,85 @@ app.get(
   }
 );
 //http://localhost:8000/cbexample4
+
+app.listen(port, () => {
+  console.log(`Yupp! Express server listening at http://localhost:${port}`);
+});
+*/
+
+/*--------------------CHAINED ROUTE CALLBACK-------- */
+/*
+import express from "express";
+const app = express();
+const port = process.env.PORT || "8000";
+
+// app.get("/student", (req, res) => {
+//   res.send("ALL STUDENT!");
+// });
+
+// app.post("/student", (req, res) => {
+//   res.send("ADD NEW STUDENT!");
+// });
+
+// app.post("/student", (req, res) => {
+//   res.send("UPDATE NEW STUDENT!");
+// });
+
+app.route('/student')
+
+.get((req, res) => {
+  res.send("ALL STUDENT!");
+})
+
+.post((req, res) => {
+  res.send("ADD NEW STUDENT!");
+})
+
+.post((req, res) => {
+  res.send("UPDATE NEW STUDENT!");
+})
+
+app.listen(port, () => {
+  console.log(`Yupp! Express server listening at http://localhost:${port}`);
+});
+*/
+
+import express from "express";
+const app = express();
+const port = process.env.PORT || "8000";
+
+app
+  .route("/student")
+
+  .all((req, res, next) => {
+    console.log("FIRST RUN THIS FOR ALL HTTP METHOD");
+    next();
+  })
+
+  .post((req, res) => {
+    console.log("POST METHOD");
+    res.send("ADD NEW STUDENT!");
+  })
+
+  .get((req, res) => {
+    console.log("GET METHOD");
+    res.send("RETRIEVE STUDENT!");
+  })
+
+  .put((req, res) => {
+    console.log("PUT METHOD");
+    res.send("UPDATE NEW STUDENT!");
+  })
+
+  .patch((req, res) => {
+    console.log("PATCH METHOD");
+    res.send("UPDATE PARTIALLY NEW STUDENT!");
+  })
+
+  .delete((req, res) => {
+    console.log("DELETE METHOD");
+    res.send("DELETE STUDENT!");
+  });
 
 app.listen(port, () => {
   console.log(`Yupp! Express server listening at http://localhost:${port}`);
