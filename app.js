@@ -10,7 +10,7 @@ app.get('/', (req, res) => {
 
 
 app.listen(port, () => {
-console.log(`server listening at http://localhost:${port}`)
+console.log(`Yupp! Express server listening at http://localhost:${port}`)
 })
 
 
