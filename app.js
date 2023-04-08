@@ -220,7 +220,7 @@ app.listen(port, () => {
 });
 */
 
-/*-------------------SECOND CALLBACK NOT WORKING */
+/*-------------------SECOND CALLBACK NOT WORKING--------------- */
 /*
 import express from "express";
 const app = express();
@@ -300,6 +300,7 @@ app.listen(port, () => {
 */
 
 /*-----------ARRAY OF CALLBACK  WORKING------------- */
+/*
 import express from "express";
 const app = express();
 const port = process.env.PORT || "8000";
@@ -324,6 +325,48 @@ const cb3 = (req, res) => {
 };
 app.get("/cbexample3", [cb1, cb2, cb3]);
 //http://localhost:8000/cbexample3
+
+app.listen(port, () => {
+  console.log(`Yupp! Express server listening at http://localhost:${port}`);
+});
+*/
+
+/*-------COMBINATION OF INDEPENDENT FUNCTION AND ARRAY OF FUNCTION----------- */
+import express from "express";
+const app = express();
+const port = process.env.PORT || "8000";
+
+app.get("/", (req, res) => {
+  res.send("hello world!");
+});
+
+const cb1 = (req, res, next) => {
+  console.log("FIRST CALLBACK");
+  next();
+};
+
+const cb2 = (req, res, next) => {
+  console.log("SECOND CALLBACK");
+  next();
+};
+
+// const cb3 = (req, res) => {
+//   console.log("3RD CALLBACK");
+//   res.send("AN ARRAY OF CALLBACK EXAMPLE  !");
+// };
+app.get(
+  "/cbexample4",
+  [cb1, cb2],
+  (req, res, next) => {
+    console.log("THIRD CALLBACK");
+    next();
+  },
+  (req, res) => {
+    console.log("FOURTH CALLBACK");
+    res.send("COMBINATION OF INDEPENDENT FUNCTION AND ARRAY OF FUNCTION  !");
+  }
+);
+//http://localhost:8000/cbexample4
 
 app.listen(port, () => {
   console.log(`Yupp! Express server listening at http://localhost:${port}`);
