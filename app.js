@@ -13,12 +13,6 @@ app.listen(port, () => {
 });
 */
 
-
-
-
-
-
-
 /**************************ALL METHOD************************ */
 
 /*
@@ -41,10 +35,6 @@ app.listen(port, () => {
 
 //http://localhost:8000/sabkuchh
 */
-
-
-
-
 
 /*----------------------PAGE NOT FOUND------------------------------*/
 /*
@@ -69,8 +59,6 @@ app.listen(port, () => {
 });
 */
 
-
-
 /*-----------------API PAGE NOT FOUND WITH PREFIX------------------ */
 /*
 import express from "express";
@@ -90,10 +78,6 @@ app.listen(port, () => {
   console.log(`Yupp! Express server listening at http://localhost:${port}`);
 });
 */
-
-
-
-
 
 /*----------------STRING PATH-------------ABOUT PAGE----------- */
 /*
@@ -115,9 +99,6 @@ app.listen(port, () => {
 });
 */
 
-
-
-
 /*----------------STRING PATH-------------ABOUT PAGE-----CONTACT PAGE------ */
 /*
 import express from "express";
@@ -143,12 +124,6 @@ app.listen(port, () => {
 });
 */
 
-
-
-
-
-
-
 /*----------------STRING PATH-------------ABOUT PAGE-----CONTACT PAGE------ */
 /*
 import express from "express";
@@ -173,10 +148,6 @@ app.listen(port, () => {
   console.log(`Yupp! Express server listening at http://localhost:${port}`);
 });
 */
-
-
-
-
 
 /*----------------STRING PATTERN PATH ---------RESTRICT-------------- */
 //THIS ROUTE PATH WILL MATCH ACD AND ABCD
@@ -205,9 +176,6 @@ app.listen(port, () => {
 });
 */
 
-
-
-
 /*--------------REGULAR EXPRESSION------------------- */
 //PATH ME JO TEXT RHEGA WO KISI BHI WORD ME MATCH HO JAYEGA TO SHI HAI
 /*
@@ -231,11 +199,6 @@ app.listen(port, () => {
 });
 */
 
-
-
-
-
-
 /*--------------------------CALLBACK------------------------ */
 /*
 import express from "express";
@@ -256,11 +219,6 @@ app.listen(port, () => {
   console.log(`Yupp! Express server listening at http://localhost:${port}`);
 });
 */
-
-
-
-
-
 
 /*-------------------SECOND CALLBACK NOT WORKING */
 /*
@@ -286,12 +244,6 @@ app.listen(port, () => {
 });
 */
 
-
-
-
-
-
-
 /*-------------------FIRST AND SECOND CALLBACK  WORKING----------WITH NEXT() CALL */
 /*
 import express from "express";
@@ -316,11 +268,6 @@ app.listen(port, () => {
   console.log(`Yupp! Express server listening at http://localhost:${port}`);
 });
 */
-
-
-
-
-
 
 /*-----------ARRAY OF CALLBACK NOT WORKING------------- */
 /*
@@ -352,10 +299,6 @@ app.listen(port, () => {
 });
 */
 
-
-
-
-
 /*-----------ARRAY OF CALLBACK  WORKING------------- */
 import express from "express";
 const app = express();
@@ -365,42 +308,23 @@ app.get("/", (req, res) => {
   res.send("hello world!");
 });
 
-
-  const cb1 = (req, res,next) => {
+const cb1 = (req, res, next) => {
   console.log("FIRST CALLBACK");
-  next()
-}
+  next();
+};
 
-const cb2 = (req, res,next) => {
+const cb2 = (req, res, next) => {
   console.log("SECOND CALLBACK");
-  next()
-}
+  next();
+};
 
 const cb3 = (req, res) => {
   console.log("THIRD CALLBACK");
   res.send("AN ARRAY OF CALLBACK EXAMPLE  !");
-}
-app.get('/cbexample3',[cb1,cb2,cb3])
+};
+app.get("/cbexample3", [cb1, cb2, cb3]);
 //http://localhost:8000/cbexample3
 
 app.listen(port, () => {
   console.log(`Yupp! Express server listening at http://localhost:${port}`);
 });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
