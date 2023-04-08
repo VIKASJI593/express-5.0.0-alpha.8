@@ -448,7 +448,7 @@ app
     res.send("DELETE STUDENT!");
   });
 
-// git push -u origin master
+// http://localhost:8000/student
 
 app.listen(port, () => {
   console.log(`Yupp! Express server listening at http://localhost:${port}`);
