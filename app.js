@@ -180,6 +180,7 @@ app.listen(port, () => {
 
 /*----------------STRING PATTERN PATH ---------RESTRICT-------------- */
 //THIS ROUTE PATH WILL MATCH ACD AND ABCD
+/*
 import express from "express";
 const app = express();
 const port = process.env.PORT || "8000";
@@ -202,7 +203,189 @@ app.all('/ab?cd', (req, res) => {
 app.listen(port, () => {
   console.log(`Yupp! Express server listening at http://localhost:${port}`);
 });
+*/
 
+
+
+
+/*--------------REGULAR EXPRESSION------------------- */
+//PATH ME JO TEXT RHEGA WO KISI BHI WORD ME MATCH HO JAYEGA TO SHI HAI
+/*
+import express from "express";
+const app = express();
+const port = process.env.PORT || "8000";
+
+app.get("/", (req, res) => {
+  res.send("hello world!");
+});
+
+app.get(/a/, (req, res) => {
+  res.send("THIS IS A RELATED WORD  !");
+});
+//http://localhost:8000/about
+// http://localhost:8000/bouta
+
+
+app.listen(port, () => {
+  console.log(`Yupp! Express server listening at http://localhost:${port}`);
+});
+*/
+
+
+
+
+
+
+/*--------------------------CALLBACK------------------------ */
+/*
+import express from "express";
+const app = express();
+const port = process.env.PORT || "8000";
+
+app.get("/", (req, res) => {
+  res.send("hello world!");
+});
+
+app.get('/cbexample1', (req, res) => {
+  res.send("ONE CALLBACK EXAMPLE  !");
+});
+//http://localhost:8000/cbexample1
+
+
+app.listen(port, () => {
+  console.log(`Yupp! Express server listening at http://localhost:${port}`);
+});
+*/
+
+
+
+
+
+
+/*-------------------SECOND CALLBACK NOT WORKING */
+/*
+import express from "express";
+const app = express();
+const port = process.env.PORT || "8000";
+
+app.get("/", (req, res) => {
+  res.send("hello world!");
+});
+
+app.get('/cbexample2', (req, res) => {
+  console.log("FIRST CALLBACK");
+}, (req, res) => {
+console.log("SECOND CALLBACK");
+  res.send("MORE THAN ONE CALLBACK EXAMPLE  !");
+});
+//http://localhost:8000/cbexample2
+
+
+app.listen(port, () => {
+  console.log(`Yupp! Express server listening at http://localhost:${port}`);
+});
+*/
+
+
+
+
+
+
+
+/*-------------------FIRST AND SECOND CALLBACK  WORKING----------WITH NEXT() CALL */
+/*
+import express from "express";
+const app = express();
+const port = process.env.PORT || "8000";
+
+app.get("/", (req, res) => {
+  res.send("hello world!");
+});
+
+app.get('/cbexample2', (req, res,next) => {
+  console.log("FIRST CALLBACK");
+  next()
+}, (req, res) => {
+console.log("SECOND CALLBACK");
+  res.send("MORE THAN ONE CALLBACK EXAMPLE  !");
+});
+//http://localhost:8000/cbexample2
+
+
+app.listen(port, () => {
+  console.log(`Yupp! Express server listening at http://localhost:${port}`);
+});
+*/
+
+
+
+
+
+
+/*-----------ARRAY OF CALLBACK NOT WORKING------------- */
+/*
+import express from "express";
+const app = express();
+const port = process.env.PORT || "8000";
+
+app.get("/", (req, res) => {
+  res.send("hello world!");
+});
+
+const cb1 = (req, res) => {
+  console.log("FIRST CALLBACK");
+}
+
+const cb2 = (req, res) => {
+  console.log("SECOND CALLBACK");
+}
+
+const cb3 = (req, res) => {
+  console.log("THIRD CALLBACK");
+  res.send("AN ARRAY OF CALLBACK EXAMPLE  !");
+}
+app.get('/cbexample3',[cb1,cb2,cb3])
+// http://localhost:8000/cbexample3
+
+app.listen(port, () => {
+  console.log(`Yupp! Express server listening at http://localhost:${port}`);
+});
+*/
+
+
+
+
+
+/*-----------ARRAY OF CALLBACK  WORKING------------- */
+import express from "express";
+const app = express();
+const port = process.env.PORT || "8000";
+
+app.get("/", (req, res) => {
+  res.send("hello world!");
+});
+
+
+  const cb1 = (req, res,next) => {
+  console.log("FIRST CALLBACK");
+  next()
+}
+
+const cb2 = (req, res,next) => {
+  console.log("SECOND CALLBACK");
+  next()
+}
+
+const cb3 = (req, res) => {
+  console.log("THIRD CALLBACK");
+  res.send("AN ARRAY OF CALLBACK EXAMPLE  !");
+}
+app.get('/cbexample3',[cb1,cb2,cb3])
+//http://localhost:8000/cbexample3
+
+app.listen(port, () => {
+  console.log(`Yupp! Express server listening at http://localhost:${port}`);
+});
 
 
 
