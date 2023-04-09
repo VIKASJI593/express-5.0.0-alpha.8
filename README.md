@@ -21,7 +21,7 @@ git add .
 
 git commit -m "id"
 
-git branch -M 2-router-id
+git branch -M 3-router-id-student
 
 git branch
 
@@ -29,9 +29,9 @@ git remote add origin https://github.com/VIKASJI593/express-5.0.0-alpha.8.git
 
 git remote -v
 
-git push -u origin 2-router-id
+git push -u origin 3-router-id-student
 
-git push -f -u origin 2-router-id
+git push -f -u origin 3-router-id-student
 
 
 //vs code setting
