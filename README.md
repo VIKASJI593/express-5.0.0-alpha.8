@@ -19,9 +19,9 @@ git init
 
 git add .
 
-git commit -m "express-app-5.0x"
+git commit -m "router"
 
-git branch -M main
+git branch -M router
 
 git branch
 
@@ -29,9 +29,9 @@ git remote add origin https://github.com/VIKASJI593/express-5.0.0-alpha.8.git
 
 git remote -v
 
-git push -u origin main
+git push -u origin router
 
-git push -f -u origin main
+git push -f -u origin router
 
 
 //vs code setting
