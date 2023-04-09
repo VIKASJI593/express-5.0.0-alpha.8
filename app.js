@@ -273,7 +273,7 @@ app.listen(port, () => {
 */
 
 /*-----------------------app.param----- */
-
+/*
 import express from "express";
 const app = express();
 const port = process.env.PORT || "8000";
@@ -290,6 +290,86 @@ app.get("/user/:id", (req, res) => {
 // http://localhost:8000/user/12
 // http://localhost:8000/user/15
 
+
+app.listen(port, () => {
+  console.log(`Yupp! Express server listening at http://localhost:${port}`);
+});
+*/
+
+
+/*---------------------app.param called only once even other have same path---- */
+/*
+import express from "express";
+const app = express();
+const port = process.env.PORT || "8000";
+
+app.param("id", (req, res, next, id) => {
+  console.log(`Called only once ID:${id}`);
+  next();
+});
+
+app.get("/user/:id", (req, res, next) => {
+  console.log("this is USER ID path 1");
+  next();
+});
+
+app.get("/user/:id", (req, res) => {
+  console.log("this is USER ID path 2");
+  res.send("RESPONSE OK");
+});
+// http://localhost:8000/user/12
+// http://localhost:8000/user/15
+
+app.listen(port, () => {
+  console.log(`Yupp! Express server listening at http://localhost:${port}`);
+});
+*/
+
+/*------------app.param() ------array of route parameter---------------*/
+// ye router.param() bhi ho skta hai jb module separate ho
+/*
+import express from "express";
+const app = express();
+const port = process.env.PORT || "8000";
+
+app.param(['id',`page`], (req, res, next, value) => {
+  console.log(`Called only once ID:${value}`);
+  next();
+});
+
+app.get("/user/:id/:page", (req, res, next) => {
+  console.log("this is USER ID path 2");
+  res.send("RESPONSE OK");
+});
+// http://localhost:8000/user/24/sonam
+// http://localhost:8000/user/343/mobie
+
+app.listen(port, () => {
+  console.log(`Yupp! Express server listening at http://localhost:${port}`);
+});
+*/
+
+
+
+
+/*---------------------------------query string---------------- */
+
+// question mark ? ke bad jo hota hai query hota hai yh path ka part nhi hota
+import express from "express";
+const app = express();
+const port = process.env.PORT || "8000";
+
+app.param(['id',`page`], (req, res, next, value) => {
+  console.log(`Called only once ID:${value}`);
+  next();
+});
+
+app.get("/user/:id/:page", (req, res, next) => {
+  console.log("this is USER ID path 2");
+  res.send("RESPONSE OK");
+});
+// http://localhost:8000/user/24/sonam
+// http://localhost:8000/user/343/mobie
 
 app.listen(port, () => {
   console.log(`Yupp! Express server listening at http://localhost:${port}`);
