@@ -15,8 +15,6 @@ nodemon index.js
 
 
 
-
-
 git init
 
 git add .
