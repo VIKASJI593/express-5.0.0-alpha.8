@@ -1,6 +1,8 @@
+/*-------------------1st STEP-------------FUNCTION */
 const allstudent = (req, res) => {
   res.send("ALL STUDENT");
 };
+/*-------------------1st STEP-------------FUNCTION */
 const deleteStudent = (req, res) => {
   console.log(req.params);
   const { id } = req.params;
@@ -12,5 +14,6 @@ const deleteStudent = (req, res) => {
   }
 };
 
+/*--------2ND STEP----------IMPORT FUNCTION------ */
 export { allstudent, deleteStudent };
 // // module.exports = { allstudent, deleteStudent }
