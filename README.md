@@ -19,9 +19,9 @@ git init
 
 git add .
 
-git commit -m "controller"
+git commit -m "parameter"
 
-git branch -M 4-controller
+git branch -M 5-parameter-and-query-string
 
 git branch
 
@@ -29,9 +29,9 @@ git remote add origin https://github.com/VIKASJI593/express-5.0.0-alpha.8.git
 
 git remote -v
 
-git push -u origin 4-controller
+git push -u origin 5-parameter-and-query-string
 
-git push -f -u origin 4-controller
+git push -f -u origin 5-parameter-and-query-string
 
 
 //vs code setting
