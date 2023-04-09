@@ -21,7 +21,7 @@ git add .
 
 git commit -m "route"
 
-git branch -M master
+git branch -M main
 
 git branch
 
@@ -29,9 +29,9 @@ git remote add origin https://github.com/VIKASJI593/express-5.0.0-alpha.8.git
 
 git remote -v
 
-git push -u origin master
+git push -u origin main
 
-git push -f -u origin master
+git push -f -u origin main
 
 
 //vs code setting
