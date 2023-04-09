@@ -19,9 +19,9 @@ git init
 
 git add .
 
-git commit -m "router"
+git commit -m "id"
 
-git branch -M 1-router
+git branch -M 2-router-id
 
 git branch
 
@@ -29,9 +29,9 @@ git remote add origin https://github.com/VIKASJI593/express-5.0.0-alpha.8.git
 
 git remote -v
 
-git push -u origin 1-router
+git push -u origin 2-router-id
 
-git push -f -u origin router
+git push -f -u origin 2-router-id
 
 
 //vs code setting
