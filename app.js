@@ -1,9 +1,9 @@
 import express from "express";
 const app = express();
 const port = process.env.PORT || "8000";
-/*-----------6TH STEP-------------IMPORT ROUTER------------- */
+/*-----------8TH STEP-------------IMPORT ROUTER------------- */
 import web from "./routes/web.js";
-/*----------------7TH STEP-----LOAD ROUTER----- */
+/*----------------9TH STEP-----LOAD ROUTER----- */
 app.use("/", web)
 
 // http://localhost:8000/about
