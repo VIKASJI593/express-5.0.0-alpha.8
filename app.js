@@ -296,7 +296,6 @@ app.listen(port, () => {
 });
 */
 
-
 /*---------------------app.param called only once even other have same path---- */
 /*
 import express from "express";
@@ -349,27 +348,114 @@ app.listen(port, () => {
 });
 */
 
-
-
-
 /*---------------------------------query string---------------- */
-
+/*
 // question mark ? ke bad jo hota hai query hota hai yh path ka part nhi hota
 import express from "express";
 const app = express();
 const port = process.env.PORT || "8000";
 
-app.param(['id',`page`], (req, res, next, value) => {
-  console.log(`Called only once ID:${value}`);
-  next();
-});
-
-app.get("/user/:id/:page", (req, res, next) => {
-  console.log("this is USER ID path 2");
+app.get("/product", (req, res, next) => {
+  console.log(req.query);
   res.send("RESPONSE OK");
 });
-// http://localhost:8000/user/24/sonam
-// http://localhost:8000/user/343/mobie
+// http://localhost:8000/product?category=mobile
+// http://localhost:8000/product?category=laptop
+
+app.listen(port, () => {
+  console.log(`Yupp! Express server listening at http://localhost:${port}`);
+});
+*/
+
+/*------------------------print in browser mobile/laptop... */
+/*
+import express from "express";
+const app = express();
+const port = process.env.PORT || "8000";
+
+app.get("/product", (req, res, next) => {
+  console.log(req.query);
+  //it prints laptop in browser
+  res.send(`RESPONSE OK ${req.query.category}`);
+});
+// http://localhost:8000/product?category=mobile
+// http://localhost:8000/product?category=laptop
+
+app.listen(port, () => {
+  console.log(`Yupp! Express server listening at http://localhost:${port}`);
+});
+*/
+
+/*-------------cat gives result undefined------------- */
+/*
+import express from "express";
+const app = express();
+const port = process.env.PORT || "8000";
+
+app.get("/product", (req, res, next) => {
+  console.log(req.query);
+  //category ka short form result nhi dega
+  res.send(`RESPONSE OK ${req.query.cat}`);
+});
+// http://localhost:8000/product?category=mobile&id=34
+// http://localhost:8000/product?category=laptop
+
+app.listen(port, () => {
+  console.log(`Yupp! Express server listening at http://localhost:${port}`);
+});
+*/
+
+/*-------------query--url id---------------- */
+/*
+import express from "express";
+const app = express();
+const port = process.env.PORT || "8000";
+
+app.get("/product", (req, res, next) => {
+  console.log(req.query);
+  
+  res.send(`RESPONSE OK ${req.query.category}`);
+});
+// http://localhost:8000/product?category=mobile&id=34
+// http://localhost:8000/product?category=laptop&id=34
+
+app.listen(port, () => {
+  console.log(`Yupp! Express server listening at http://localhost:${port}`);
+});
+*/
+
+/*----------------destructured  code-------------- */
+/*
+import express from "express";
+const app = express();
+const port = process.env.PORT || "8000";
+
+app.get("/product", (req, res, next) => {
+  console.log(req.query);
+  const {category,id} = req.query
+  //category ka short form result nhi dega
+  res.send(`RESPONSE OK ${category} and ${id}`);
+});
+// http://localhost:8000/product?category=mobile&id=34
+// http://localhost:8000/product?category=laptop&id=34
+
+app.listen(port, () => {
+  console.log(`Yupp! Express server listening at http://localhost:${port}`);
+});
+*/
+
+import express from "express";
+const app = express();
+const port = process.env.PORT || "8000";
+
+app.get("/product", (req, res, next) => {
+  console.log(req.query);
+  //destructure
+  const { category, id } = req.query;
+   res.send(`RESPONSE OK ${category} and ${id}`);
+});
+// http://localhost:8000/product?category=mobile&id=34
+// http://localhost:8000/product?category=laptop&id=34
 
 app.listen(port, () => {
   console.log(`Yupp! Express server listening at http://localhost:${port}`);
