@@ -22,19 +22,19 @@ git init
 
 git add .
 
-git commit -m "view"
+git commit -m "view-home"
 
-git branch -M 6-view
+git branch -M 7-view home
 
 git branch
 
 git remote add origin https://github.com/VIKASJI593/express-5.0.0-alpha.8.git
 
 git remote -v
+ linkedin.com/in/vikas-kumar4194168
+git push -u origin 7-view home
 
-git push -u origin 6-view
-
-git push -f -u origin 6-view
+git push -f -u origin 7-view home
 
 
 //vs code setting
