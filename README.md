@@ -22,9 +22,9 @@ git init
 
 git add .
 
-git commit -m "parameter"
+git commit -m "view"
 
-git branch -M 5-parameter-and-query-string
+git branch -M 6-view
 
 git branch
 
@@ -32,9 +32,9 @@ git remote add origin https://github.com/VIKASJI593/express-5.0.0-alpha.8.git
 
 git remote -v
 
-git push -u origin 5-parameter-and-query-string
+git push -u origin 6-view
 
-git push -f -u origin 5-parameter-and-query-string
+git push -f -u origin 6-view
 
 
 //vs code setting
