@@ -3,7 +3,11 @@ const app = express();
 const port = process.env.PORT || "8000";
 /*-----------8TH STEP-------------IMPORT ROUTER------------- */
 import web from "./routes/web.js";
-/*----------------9TH STEP-----LOAD ROUTER----- */
+
+/*-------9th---------static----link it into index.html------ */
+//PUBLIC FILE ME JO BHI HOGA AAPKE LIYE AVAILABLE HO JAYEGA
+app.use(express.static('public'))
+/*----------------10TH STEP-----LOAD ROUTER----- */
 app.use("/", web)
 
 // http://localhost:8000/about

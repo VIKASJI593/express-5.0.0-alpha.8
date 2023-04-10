@@ -22,9 +22,9 @@ git init
 
 git add .
 
-git commit -m "view-about"
+git commit -m "STATIC"
 
-git branch -M 8-view-about
+git branch -M 9-static
 
 git branch
 
@@ -32,9 +32,9 @@ git remote add origin https://github.com/VIKASJI593/express-5.0.0-alpha.8.git
 
 git remote -v
 
-git push -u origin 8-view-about
+git push -u origin 9-static
 
-git push -f -u origin 8-view-about
+git push -f -u origin 9-static
 
 
 //vs code setting
