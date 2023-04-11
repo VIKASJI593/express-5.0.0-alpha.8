@@ -31,8 +31,7 @@ console.log(join(process.cwd(), "public"));
 // fir bhi unique banane ke liye static add kiya
 //isse confliction nhi hoga. html me src me pehle static likhna hoga
 
-app.use("/static", express.static(join(process.cwd(), "public")));
-//app.use(express.static(join(process.cwd(), 'public')));
+app.use(express.static(join(process.cwd(), 'public')));
 
 app.use("/", web);
 
