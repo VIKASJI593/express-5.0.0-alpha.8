@@ -1,18 +1,12 @@
-npm install ejs
+ 
+ //homecontroller file me variable define krte hai
+ res.render('index',{'name':'sonam'})
+ //index.ejs  file me iska use krte hai
+<h2><%= city %></h2>
 
-//-------------only index.ejs not comes with app.set('view engine', 'ejs')------
-
-homecontroller.js file
-const homeController = (req, res) => {
-res.render('index.ejs')
-------------------------//
-
-//setup the directory where template files are located
-app.set('views', './views') // specify the views directory
-
-//setup the template enginge t use
-app.set('view engine', 'ntl') // register the template engine
-app.set('view engine', 'ejs')
+//iska use navigation ke liye krte hai
+<a href="/">Home</a>
+<a href="/about">About</a>
 
 
 Express Route Tester
