@@ -1,34 +1,21 @@
-//----favicon ke liye favicon wesite se generate krke zip extract kre public file me paste kr de (ctrl+f5) press krne ho jayega
-ctrl+f5 se hard refresh krne ke baad show krega-----//
+npm install ejs
 
-// allow rehne par inspect network me staus code 200(success) show krega
-dotfiles: "allow", 
+//-------------only index comes with app.set('view engine', 'ejs')------
+app.js file
+// setup the template enginge to use
+app.set('view engine', 'ejs')
 
-// ignore rehne par inspect network me staus code 404(not found) show krega, ndex.html me link rehne ke baad bhi 404 dikhega
-//lekin agar dikhana hai to allow kre dotfiles
-dotfiles: "ignore",
+homecontroller.js file
+const homeController = (req, res) => {
+res.render('index')
+------------------------//
 
-dotfiles: "deny",
+//setup the directory where template files are located
+app.set('views', './views') // specify the views directory
 
-//css file import only
-<link rel="stylesheet" href=".hello.css" />
-
-//path
-app.use(express.static(join(process.cwd(),'public'), options));
-
-//--------------------------dotfiles--------------------//
-const options = {
-  dotfiles: "allow",
-  etag: false,
-  extensions: ["htm", "html"],
-  index: false,
-  maxAge: "id",
-  redirect: false,
-  setHeaders: function (res, path, stat) {
-    res.set("x-timestamp", Date.now());
-  }
-}
-
+//setup the template enginge t use
+app.set('view engine', 'ntl') // register the template engine
+app.set('view engine', 'ejs')
 
 
 Express Route Tester
@@ -53,13 +40,13 @@ nodemon index.js
 
 git init
 
-git branch -M 13-dot-file
+git branch -M 14-ejs
 
 git add .
 
-git commit -m "STATIC"
+git commit -m "ejs"
 
-git push -u origin 13-dot-file
+git push -u origin 14-ejs
 
 git branch
 
@@ -67,4 +54,4 @@ git remote add origin https://github.com/VIKASJI593/express-5.0.0-alpha.8.git
 
 git remote -v
 
-git push -f -u origin 13-dot-file
+git push -f -u origin 14-ejs
