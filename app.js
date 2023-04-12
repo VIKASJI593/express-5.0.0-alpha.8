@@ -6,13 +6,17 @@ const port = process.env.PORT || "8000";
 import web from "./routes/web.js";
 
 // setup the directory where template files are located
+//by default views set rhta isliye yee rhe na rhe koi fark nhi padega
 //app.set('views', './views')
 
+//--------iska use tb hoga jb viws file ka name change kr denge (myviews)
+//app.set('views', './myviews')
 
+/*------------------------9th step --------------use ejs-----------*/
 // setup the template enginge to use
-//app.set('view engine', 'ejs')
+app.set('view engine', 'ejs')
 
-/*------------------------9th step --------------load-----------*/
+/*------------------------10th step --------------load-----------*/
 app.use("/", web);
 
 // http://localhost:8000
