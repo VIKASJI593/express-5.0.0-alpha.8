@@ -1,4 +1,6 @@
 import express from "express";
+//static files path
+import { join } from "path";
 const app = express();
 const port = process.env.PORT || "8000";
 
@@ -14,8 +16,10 @@ import web from "./routes/web.js";
 
 /*------------------------9th step --------------use ejs-----------*/
 // setup the template enginge to use
-app.set('view engine', 'ejs')
+app.set("view engine", "ejs");
 
+//static files
+app.use(express.static(join(process.cwd(), "public")));
 /*------------------------10th step --------------load-----------*/
 app.use("/", web);
 
