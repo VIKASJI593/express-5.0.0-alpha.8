@@ -40,13 +40,13 @@ nodemon index.js
 
 git init
 
-git branch -M 14-ejs
+git branch -M 15-ejs-index.ejs
 
 git add .
 
 git commit -m "ejs"
 
-git push -u origin 14-ejs
+git push -u origin 15-ejs-index.ejs
 
 git branch
 
@@ -54,4 +54,4 @@ git remote add origin https://github.com/VIKASJI593/express-5.0.0-alpha.8.git
 
 git remote -v
 
-git push -f -u origin 14-ejs
+git push -f -u origin 15-ejs-index.ejs
