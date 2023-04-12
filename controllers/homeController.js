@@ -1,6 +1,6 @@
 /*-------------------1st STEP------------- */
 const homeController = (req, res) => {
-  /*------2nd step---------give path of index-----import index.ejs-- */
+  /*-----2nd step---------give path of index-----import index.ejs-- */
     res.render('index.ejs')
 };
 /*--------3RD STEP----------EXPORT FUNCTION------ */

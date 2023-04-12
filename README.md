@@ -1,13 +1,10 @@
 npm install ejs
 
-//-------------only index comes with app.set('view engine', 'ejs')------
-app.js file
-// setup the template enginge to use
-app.set('view engine', 'ejs')
+//-------------only index.ejs not comes with app.set('view engine', 'ejs')------
 
 homecontroller.js file
 const homeController = (req, res) => {
-res.render('index')
+res.render('index.ejs')
 ------------------------//
 
 //setup the directory where template files are located
