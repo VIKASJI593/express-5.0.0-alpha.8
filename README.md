@@ -1,12 +1,14 @@
-ctrl+f5 se hard refresh krne ke baad show krega
+//----favicon ke liye favicon wesite se generate krke zip extract kre public file me paste kr de (ctrl+f5) press krne ho jayega
+ctrl+f5 se hard refresh krne ke baad show krega-----//
 
 // allow rehne par inspect network me staus code 200(success) show krega
-dotfiles: "allow",
+dotfiles: "allow", 
 
 // ignore rehne par inspect network me staus code 404(not found) show krega, ndex.html me link rehne ke baad bhi 404 dikhega
 //lekin agar dikhana hai to allow kre dotfiles
 dotfiles: "ignore",
 
+dotfiles: "deny",
 
 //css file import only
 <link rel="stylesheet" href=".hello.css" />
