@@ -10,6 +10,14 @@ const homeController = (req, res) => {
 //index.ejs file me iska use krte hai
 <h2><%= name %></h2>
 
+<!-- creating variable data -----index.ejs file only->
+    <% var i =10 %> 
+    <!-- displaying variable data -->
+    <%= i %>
+
+    <!-- comment in ejs---------inspect me te show nhi krega------>
+    <%# comment will not be present in the rendered html %>
+
 
 
 Express Route Tester
@@ -31,7 +39,7 @@ nodemon index.js
 
 git init
 
-git branch -M 18-ejs-variable
+git branch -M 19-ejs-variable
 
 git add .
 
