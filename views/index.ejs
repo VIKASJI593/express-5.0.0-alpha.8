@@ -20,5 +20,14 @@
 
     <!-- comment in ejs---------inspect me te show nhi krega------>
     <%# comment will not be present in the rendered html %>
+  
+  <!-- if -->
+  <% if(name){ %>
+    <h1>hello</h1>
+    <% } %>
+<!-- if variable -->
+    <% if(name){ %>
+      hello <%= name %>
+      <% } %>
   </body>
 </html>

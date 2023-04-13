@@ -39,7 +39,7 @@ nodemon index.js
 
 git init
 
-git branch -M 19-ejs-variable
+git branch -M 18-ejs-variable
 
 git add .
 
