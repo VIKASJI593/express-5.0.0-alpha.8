@@ -1,13 +1,13 @@
-const homeController = (req, res) => {
+partials=includes
+//-------------static function------------
+//homecontroller,js file
+res.render('index', { 'title': 'Home' });
 
-//index.ejs file
+//header.js file
+<title><%= title %></title>
 
-  <!-- if with condition -->
-
-    <% if(id == 10){ %> this is 10 <% }else{ %> this is not 10 <%}%>
-
-<br> <!-- if with not condition -->
-<% if(id == 11){ %> this is 10 <% }else{ %> this is not 10 <%}%>
+// koi bhi code ek file banakar dal de include se import jahan krenge wha kaam krega
+<%- include('./partials/header.ejs') %>
 
 Express Route Tester
 https://forbeslindesay.github.io/express-route-tester/
@@ -28,15 +28,15 @@ nodemon index.js
 
 git init
 
-git branch -M 22-ejs-function
+git branch -M 23-ejs-include-dynamic
 
 git add .
 
 git commit -m "ejs"
 
-git push -u origin 22-ejs-function
+git push -u origin 23-ejs-include-dynamic
 
-git push -f -u origin 22-ejs-function
+git push -f -u origin 23-ejs-include-dynamic
 
 git branch
 

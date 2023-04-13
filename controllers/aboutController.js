@@ -1,7 +1,7 @@
 /*-------------------1st STEP------------- */
-const homeController = (req, res) => {
+const aboutController = (req, res) => {
   /*-----2nd step---------give path of index-----import index.ejs-- */
-  res.render('index', { 'title': 'Home' });
+  res.render('about', { 'title': 'About' });
 };
 /*--------3RD STEP----------EXPORT FUNCTION------ */
-export { homeController };
+export { aboutController };
