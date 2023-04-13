@@ -31,6 +31,22 @@
     <!-- <% for(i=0;i<=4;i++){ %> hello <%= i %> <% } %> -->
 
     <!-------------- for loop -------only with digit----------->
-    <% for(i=0;i<=4;i++){ %> <%= i %> <% } %>
+    <!-- <% for(i=0;i<=4;i++){ %> <%= i %> <% } %> -->
+
+    <!------- for loop -------only with marks----controller------->
+    <!-- <% for(i=0;i<=4;i++){ %> <%= i %> <%= marks[i] %> <% } %> -->
+
+    <!-- <% for(const key in marks){ %> <%= key %> <% } %>  -->
+
+    <!-- <% for (const mark of marks) { %> <%= marks %> <% } %> -->
+
+    <!------------------------------- while-loop ---------------------------->
+    <!-- <% var i=0; %> <% while (i<=4) { %> <%= i %> <%= marks[i] %> <% i++ %> <% } %> -->
+
+    <!--------------------------------- for each loop ------------------------->
+    <!-- <% marks.forEach((value)=>{ %> <%= value %> <% }) %> -->
+
+    <!-- function call -->
+    <% var current =new Date(); %> <%= current %>
   </body>
 </html>
