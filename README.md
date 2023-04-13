@@ -1,24 +1,16 @@
 const homeController = (req, res) => {
-  //-------------varaible data---------------
-  const data = {
-    name: "sonam",
-  };
-  /*-----2nd step---------give path of index-----import index.ejs-- */
-  res.render("index", data);
+//-------------varaible data---------------
+//agar id 11 kr de jo ki ejs id se match nhi hone pr print nhi hoga
+const data = {
+name: "sonam",
+id :10
 };
 
 //index.ejs file me iska use krte hai
-<h2><%= name %></h2>
 
-<!-- creating variable data -----index.ejs file only->
-    <% var i =10 %> 
-    <!-- displaying variable data -->
-    <%= i %>
-
-    <!-- comment in ejs---------inspect me te show nhi krega------>
-    <%# comment will not be present in the rendered html %>
-
-
+<!-- if with condition -->
+<% if(id == 10){ %> this is 10 <% } %>
+--------------//
 
 Express Route Tester
 https://forbeslindesay.github.io/express-route-tester/
@@ -39,13 +31,13 @@ nodemon index.js
 
 git init
 
-git branch -M 18-ejs-variable
+git branch -M 19-ejs-if-else
 
 git add .
 
 git commit -m "ejs"
 
-git push -u origin 18-ejs-variable
+git push -u origin 19-ejs-if-else
 
 git branch
 
@@ -53,4 +45,4 @@ git remote add origin https://github.com/VIKASJI593/express-5.0.0-alpha.8.git
 
 git remote -v
 
-git push -f -u origin 18-ejs-variable
+git push -f -u origin 19-ejs-if-else
