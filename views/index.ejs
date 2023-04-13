@@ -15,8 +15,22 @@
     <h2><%= name %></h2>
 
     <!-- if with condition -->
-    <% if(id == 10){ %> this is 10 <% }else{ %> this is not 10 <%}%>
-   <br> <!-- if with not condition -->
-    <% if(id == 11){ %> this is 10 <% }else{ %> this is not 10 <%}%>
+    <!-- <% if(id == 10){ %> this is 10 <% }else{ %> this is not 10 <%}%> -->
+    <!-- if with not condition -->
+    <!-- <% if(id == 11){ %> this is 10 <% }else{ %> this is not 10 <%}%> -->
+
+    <!--  if else if  -->
+    <!-- home controller me id =10,11 deke check kre -->
+    <!-- <% if(id==10){ %> this is 10 <% }else if ( id == 11){%> this is 11 <% }else
+    {%> other <% } %> -->
+
+    <!-------------- for loop ------------------>
+    <!-- <% for(i=0;i<=4;i++){ %> hello <% } %> -->
+
+    <!-------------- for loop -------with digit----------->
+    <!-- <% for(i=0;i<=4;i++){ %> hello <%= i %> <% } %> -->
+
+    <!-------------- for loop -------only with digit----------->
+    <% for(i=0;i<=4;i++){ %> <%= i %> <% } %>
   </body>
 </html>

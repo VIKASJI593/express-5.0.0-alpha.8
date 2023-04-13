@@ -28,15 +28,15 @@ nodemon index.js
 
 git init
 
-git branch -M 20-ejs-if-else-no
+git branch -M 21-ejs-loop
 
 git add .
 
 git commit -m "ejs"
 
-git push -u origin 20-ejs-if-else-no
+git push -u origin 21-ejs-loop
 
-git push -f -u origin 20-ejs-if-else-no
+git push -f -u origin 21-ejs-loop
 
 git branch
 
