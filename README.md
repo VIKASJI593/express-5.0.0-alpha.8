@@ -1,12 +1,16 @@
-//homecontroller file me variable define krte hai
-res.render('index',{'name':'sonam'})
+const homeController = (req, res) => {
+  //-------------varaible data---------------
+  const data = {
+    name: "sonam",
+  };
+  /*-----2nd step---------give path of index-----import index.ejs-- */
+  res.render("index", data);
+};
+
 //index.ejs file me iska use krte hai
+<h2><%= name %></h2>
 
-<h2><%= city %></h2>
 
-//iska use navigation ke liye krte hai
-<a href="/">Home</a>
-<a href="/about">About</a>
 
 Express Route Tester
 https://forbeslindesay.github.io/express-route-tester/
@@ -27,13 +31,13 @@ nodemon index.js
 
 git init
 
-git branch -M 17-ejs-static
+git branch -M 18-ejs-variable
 
 git add .
 
 git commit -m "ejs"
 
-git push -u origin 17-ejs-static
+git push -u origin 18-ejs-variable
 
 git branch
 
@@ -41,4 +45,4 @@ git remote add origin https://github.com/VIKASJI593/express-5.0.0-alpha.8.git
 
 git remote -v
 
-git push -f -u origin 17-ejs-static
+git push -f -u origin 18-ejs-variable
