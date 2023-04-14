@@ -28,15 +28,15 @@ nodemon index.js
 
 git init
 
-git branch -M 23-ejs-include-dynamic
+git branch -M 24-resume
 
 git add .
 
 git commit -m "ejs"
 
-git push -u origin 23-ejs-include-dynamic
+git push -u origin 24-resume
 
-git push -f -u origin 23-ejs-include-dynamic
+git push -f -u origin 24-resume
 
 git branch
 
