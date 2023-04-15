@@ -1,7 +1,8 @@
 <!-- 
 //--APP.JS---
+//When we use path then only that path gives me log on node
 //APPLICATION LEVEL MIDDLEWARE
-app.use(myLogger);
+app.use('/about',myLogger);
  -->
 
 <!-- 
@@ -32,15 +33,15 @@ nodemon index.js
 
 git init
 
-git branch -M 25-middleware
+git branch -M 26-middleware-path
 
 git add .
 
-git commit -m "ejs"
+git commit -m "MIDDLEWARE"
 
-git push -u origin 25-middleware
+git push -u origin 26-middleware-path
 
-git push -f -u origin 25-middleware
+git push -f -u origin 26-middleware-path
 
 git branch
 

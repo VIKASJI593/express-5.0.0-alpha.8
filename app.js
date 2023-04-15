@@ -16,7 +16,7 @@ app.set("view engine", "ejs");
 
 /*----------------------11th step+logger-middleware----------------- */
 //APPLICATION LEVEL MIDDLEWARE
-app.use(myLogger);
+app.use('/about',myLogger);
 
 //static files
 //app.use(express.static(join(process.cwd(), "public")));
