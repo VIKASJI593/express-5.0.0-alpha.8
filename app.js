@@ -6,6 +6,7 @@ const port = process.env.PORT || "8000";
 
 /*-------------------------8th step -------------------------*/
 import web from "./routes/web.js";
+import student from "./routes/student.js";
 import myLogger from "./middlewares/logger-middleware.js";
 
 //app.set('views', './views')
@@ -22,7 +23,7 @@ app.use('/about',myLogger);
 //app.use(express.static(join(process.cwd(), "public")));
 /*------------------------12th step --------------load-----------*/
 app.use("/", web);
-
+app.use("/", student);
 // http://localhost:8000
 
 app.listen(port, () => {
