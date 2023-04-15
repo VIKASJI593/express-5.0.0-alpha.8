@@ -1,3 +1,11 @@
+
+<!-- 
+//application level par hai isme koi ile nhi banaya hai
+router.get("/about/12", (req, res) => {
+  res.send("application level");
+});
+ -->
+
 <!-- 
 //--APP.JS---
 //When we use path then only that path gives me log on node
@@ -5,13 +13,7 @@
 app.use('/about',myLogger);
  -->
 
-<!-- 
-//---logger-midleware.js---
-var myLogger = (req, res, next) => {
-  console.log("Logged");
-  next();
-};
-export default myLogger; -->
+
 
 
 Express Route Tester
@@ -33,15 +35,15 @@ nodemon index.js
 
 git init
 
-git branch -M 26-middleware-path
+git branch -M 27-middleware-application-level
 
 git add .
 
 git commit -m "MIDDLEWARE"
 
-git push -u origin 26-middleware-path
+git push -u origin 27-middleware-application-level
 
-git push -f -u origin 26-middleware-path
+git push -f -u origin 27-middleware-application-level
 
 git branch
 
