@@ -7,7 +7,7 @@ import { aboutController } from "../controllers/aboutController.js";
 router.get("/", homeController);
 router.get("/about", aboutController);
 
-//application level par hai isme koi ile nhi banaya hai
+//application level par hai isme koi file nhi banaya hai
 router.get("/about/12", (req, res) => {
   res.send("application level");
 });
