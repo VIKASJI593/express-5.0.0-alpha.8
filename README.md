@@ -1,13 +1,17 @@
-partials=includes
-//-------------static function------------
-//homecontroller,js file
-res.render('index', { 'title': 'Home' });
+<!-- 
+//--APP.JS---
+//APPLICATION LEVEL MIDDLEWARE
+app.use(myLogger);
+ -->
 
-//header.js file
-<title><%= title %></title>
+<!-- 
+//---logger-midleware.js---
+var myLogger = (req, res, next) => {
+  console.log("Logged");
+  next();
+};
+export default myLogger; -->
 
-// koi bhi code ek file banakar dal de include se import jahan krenge wha kaam krega
-<%- include('./partials/header.ejs') %>
 
 Express Route Tester
 https://forbeslindesay.github.io/express-route-tester/
@@ -28,15 +32,15 @@ nodemon index.js
 
 git init
 
-git branch -M 24-resume
+git branch -M 25-middleware
 
 git add .
 
 git commit -m "ejs"
 
-git push -u origin 24-resume
+git push -u origin 25-middleware
 
-git push -f -u origin 24-resume
+git push -f -u origin 25-middleware
 
 git branch
 

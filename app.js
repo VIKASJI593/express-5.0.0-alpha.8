@@ -1,11 +1,12 @@
 import express from "express";
 //static files path
-import { join } from "path";
+//import { join } from "path";
 const app = express();
 const port = process.env.PORT || "8000";
 
 /*-------------------------8th step -------------------------*/
 import web from "./routes/web.js";
+import myLogger from "./middlewares/logger-middleware.js";
 
 //app.set('views', './views')
 
@@ -13,9 +14,13 @@ import web from "./routes/web.js";
 // setup the template enginge to use
 app.set("view engine", "ejs");
 
+/*----------------------11th step+logger-middleware----------------- */
+//APPLICATION LEVEL MIDDLEWARE
+app.use(myLogger);
+
 //static files
-app.use(express.static(join(process.cwd(), "public")));
-/*------------------------10th step --------------load-----------*/
+//app.use(express.static(join(process.cwd(), "public")));
+/*------------------------12th step --------------load-----------*/
 app.use("/", web);
 
 // http://localhost:8000
